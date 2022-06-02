@@ -238,3 +238,76 @@ data = []
 for e in range(NUM_STEPS):
     data.append(get_data(e/NUM_STEPS, num, ndims, MAX_DIM))
     print(data[e])
+
+
+# VISUALIZATION
+
+def plot_data_3d(data):
+
+    epsilons = []
+    dimensions = []
+    counts = []
+
+    for i in range(len(data)):
+        for j in range(len(data[i])):
+            epsilons.append(i/NUM_STEPS)
+            dimensions.append(j)
+            counts.append(data[i][j])
+
+    fig = plt.figure()
+ 
+    # syntax for 3-D projection
+    ax = plt.axes(projection ='3d')
+    
+    # defining axes
+    # z = np.linspace(0, 1, 100)
+    # x = z * np.sin(25 * z)
+    # y = z * np.cos(25 * z)
+    # c = x + y
+    ax.scatter(epsilons, dimensions, counts, c=dimensions)
+    
+    # syntax for plotting
+    ax.set_title('Barcode :)')
+    ax.set_xlabel('Epsilon')
+    ax.set_ylabel('Dimension')
+    ax.set_zlabel('Count')
+    plt.show()
+
+def plot_data_2d(data):
+
+    epsilons_yes = []
+    dimensions_yes = []
+
+    epsilons_no = []
+    dimensions_no = []
+
+    # for i in range(len(data)):
+    #     for j in range(len(data[i])):
+    #         epsilons.append(i/NUM_STEPS)
+    #         dimensions.append(j)
+    #         if data[i][j] == 0:
+    #             counts.append(0)
+    #         else:
+    #             counts.append(1)
+
+    for i in range(len(data)):
+        for j in range(len(data[i])):
+            if data[i][j] != 0:
+                epsilons_yes.append(i/NUM_STEPS)
+                dimensions_yes.append(j)
+            else:
+                epsilons_no.append(i/NUM_STEPS)
+                dimensions_no.append(j)
+
+    # plt.grid()
+
+    plt.scatter(epsilons_no, dimensions_no, c="white", s=100, marker='s')
+    plt.scatter(epsilons_yes, dimensions_yes, c="blue", s=100, marker='s')
+
+    plt.title('Barcode :)')
+    plt.xlabel('Epsilon')
+    plt.ylabel('Dimension')
+
+    plt.show()
+
+plot_data_2d(data)
