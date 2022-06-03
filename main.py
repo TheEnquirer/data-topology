@@ -3,6 +3,7 @@ import math
 from sympy import * 
 from matplotlib import pyplot as plt
 from mpl_toolkits import mplot3d
+import networkx as nx
 
 ### CONSTANTS ###
 epsilon = 0.4 # max distance between datapoints
@@ -12,9 +13,9 @@ ndims = 2 # dimension of data
 MAX_DIM = 4 # max dimension of simplices
 NUM_STEPS = 10 # number of different epsilon values between 0 and 1
 
-np.random.seed(1)
+np.random.seed(6)
 
-def get_data(epsilon, num, ndims, MAX_DIM):
+def get_data(epsilon, num, ndims, MAX_DIM, data=None, generate_graph=False):
 
     # GENERATING ADJACENCY MATRIX
 
@@ -25,7 +26,11 @@ def get_data(epsilon, num, ndims, MAX_DIM):
             sum += (value - p2[count])**2.0
         return math.sqrt(sum)
 
-    cloud = np.random.random((num, ndims)) # each point p = [p1, p2, ..., p_ndims]
+    # get actual data as np array
+    if data==None:
+        cloud = np.random.random((num, ndims)) # each point p = [p1, p2, ..., p_ndims]
+    else:
+        cloud = data
 
     # Adjacency Matrix
     adjacency = np.zeros((len(cloud), len(cloud)))
@@ -49,6 +54,19 @@ def get_data(epsilon, num, ndims, MAX_DIM):
 
 
 
+
+    # GENERATING GRAPH
+    if generate_graph and epsilon==0.4:
+        # get graph
+        graph = nx.DiGraph()
+        for i in range(len(adjacency)):
+            for j in range(len(adjacency[0])):
+                if adjacency[i][j] == 1:
+                    graph.add_edge(i, j)
+        
+        layout = nx.circular_layout(graph)
+        nx.draw(graph, pos=layout, with_labels=True)
+        plt.show()
 
 
 
@@ -236,7 +254,7 @@ def get_data(epsilon, num, ndims, MAX_DIM):
 data = []
 
 for e in range(NUM_STEPS):
-    data.append(get_data(e/NUM_STEPS, num, ndims, MAX_DIM))
+    data.append(get_data(e/NUM_STEPS, num, ndims, MAX_DIM, generate_graph=True))
     print(data[e])
 
 
