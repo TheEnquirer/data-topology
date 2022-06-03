@@ -5,9 +5,12 @@ from matplotlib import pyplot as plt
 from mpl_toolkits import mplot3d
 import timeit
 import tqdm
+import networkx as nx
+from p5 import *
+
+
 start = timeit.default_timer()
 
-import networkx as nx
 
 ### CONSTANTS ###
 epsilon = 0.4 # max distance between datapoints
@@ -15,9 +18,9 @@ num = 5 # number of datapoints
 ndims = 2 # dimension of data
 
 MAX_DIM = 4 # max dimension of simplices
-NUM_STEPS = 10 # number of different epsilon values between 0 and 1
+NUM_STEPS = 2 # number of different epsilon values between 0 and 1
 
-np.random.seed(6)
+np.random.seed(2)
 
 def get_data(epsilon, num, ndims, MAX_DIM, data=None, generate_graph=False):
 
@@ -60,6 +63,9 @@ def get_data(epsilon, num, ndims, MAX_DIM, data=None, generate_graph=False):
 
 
     # GENERATING GRAPH
+
+    # g
+
     if generate_graph and epsilon==0.4:
         # get graph
         graph = nx.DiGraph()
@@ -251,17 +257,21 @@ def get_data(epsilon, num, ndims, MAX_DIM, data=None, generate_graph=False):
 
     # print(betti_nums)
 
-    return betti_nums
+    return [betti_nums, cloud, adjacency]
 
 # get_data(epsilon, num, ndims, MAX_DIM)
 
 data = []
-
+raw_points = []
+adjacency = None
 for e in tqdm.tqdm(range(NUM_STEPS)):
-    data.append(get_data(e/NUM_STEPS, num, ndims, MAX_DIM, generate_graph=True))
+    temp = get_data(e/NUM_STEPS, num, ndims, MAX_DIM, generate_graph=True)
+    data.append(temp[0])
+    raw_points.append(temp[1])
+    adjacency = temp[2]
 
-for i in data:
-    print(i)
+# for i,v in enumerate(data):
+#     print(raw_points[i], data[i])
 
 # VISUALIZATION
 
@@ -335,4 +345,40 @@ def plot_data_2d(data):
 
 plot_data_2d(data)
 stop = timeit.default_timer()
-print('execution time: ', stop - start)
+# print('execution time: ', stop - start)
+
+
+def generate_drawing(raw, adjacency):
+    node_list = []
+    edge_list = []
+    print(adjacency)
+    for node in raw[0]:
+        x, y = node
+        node_list.append([x*1000, y*1000])
+
+    for i in range(len(adjacency)):
+        for j in range(len(adjacency[0])):
+            if adjacency[i][j] != 0:
+                edge = [node_list[i], node_list[j]]
+                edge_list.append(edge)
+
+    for i in node_list:
+        ellipse((i[0],i[1]), 20, 20)
+
+    for i in edge_list:
+        line((i[0]),(i[1]))
+
+def setup():
+        size(1000, 1000)
+
+def draw():
+    background(0)
+    no_fill()
+    stroke(255)
+    # ellipse((10,10),20,20)
+    generate_drawing(raw_points, adjacency)
+
+if __name__ == '__main__':
+    run()
+    pass
+
