@@ -13,14 +13,15 @@ start = timeit.default_timer()
 
 
 ### CONSTANTS ###
-epsilon = 0.4 # max distance between datapoints
-num = 5 # number of datapoints
+epsilon = 0.01 # max epsilon
+num = 10 # number of datapoints
 ndims = 2 # dimension of data
 
 MAX_DIM = 4 # max dimension of simplices
-NUM_STEPS = 2 # number of different epsilon values between 0 and 1
+# NUM_STEPS = 10 # number of different epsilon values between 0 and 1
+NUM_STEPS = 1 # number of different epsilon values between 0 and 1
 
-np.random.seed(2)
+# np.random.seed(3)
 
 def get_data(epsilon, num, ndims, MAX_DIM, data=None, generate_graph=False):
 
@@ -265,7 +266,8 @@ data = []
 raw_points = []
 adjacency = None
 for e in tqdm.tqdm(range(NUM_STEPS)):
-    temp = get_data(e/NUM_STEPS, num, ndims, MAX_DIM, generate_graph=True)
+    REP = 0.2
+    temp = get_data(REP, num, ndims, MAX_DIM, generate_graph=False)
     data.append(temp[0])
     raw_points.append(temp[1])
     adjacency = temp[2]
@@ -354,7 +356,7 @@ def generate_drawing(raw, adjacency):
     print(adjacency)
     for node in raw[0]:
         x, y = node
-        node_list.append([x*1000, y*1000])
+        node_list.append([(x*700)+100, (y*700)+100])
 
     for i in range(len(adjacency)):
         for j in range(len(adjacency[0])):
@@ -363,16 +365,19 @@ def generate_drawing(raw, adjacency):
                 edge_list.append(edge)
 
     for i in node_list:
-        ellipse((i[0],i[1]), 20, 20)
+        ellipse((i[0],i[1]), 30, 30)
+        fill("red")
+        ellipse((i[0],i[1]), 10, 10)
+        no_fill()
 
     for i in edge_list:
         line((i[0]),(i[1]))
 
 def setup():
-        size(1000, 1000)
+        size(800, 800)
 
 def draw():
-    background(0)
+    background("#212121ff")
     no_fill()
     stroke(255)
     # ellipse((10,10),20,20)
