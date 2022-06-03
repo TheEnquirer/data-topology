@@ -1,12 +1,16 @@
 import numpy as np
 import math
-from sympy import * 
+from sympy import *
 from matplotlib import pyplot as plt
 from mpl_toolkits import mplot3d
+import timeit
+import tqdm
+start = timeit.default_timer()
+
 
 ### CONSTANTS ###
 epsilon = 0.4 # max distance between datapoints
-num = 10 # number of datapoints
+num = 15 # number of datapoints
 ndims = 2 # dimension of data
 
 MAX_DIM = 4 # max dimension of simplices
@@ -90,7 +94,7 @@ def get_data(epsilon, num, ndims, MAX_DIM):
         for i in range(len(subgraph)):
             for j in range(i+1, len(subgraph)):
                 if adj_mat[subgraph[i]][subgraph[j]] == 0:
-                    return False    
+                    return False
         return True
 
     # generate all n-simplices
@@ -106,7 +110,7 @@ def get_data(epsilon, num, ndims, MAX_DIM):
         return n_simplices
 
     # generate all simplices
-    for n in range(2, MAX_DIM+1):   
+    for n in range(2, MAX_DIM+1):
         good_nodes = []
         for i in nodes:
             if node_degrees[i] >= n:
@@ -130,7 +134,7 @@ def get_data(epsilon, num, ndims, MAX_DIM):
         numOfSwaps = 0
         for index in range(len(lst)):
             if index != lst[index]:
-                whereIsIndexMatchingNum = lst.index(index) 
+                whereIsIndexMatchingNum = lst.index(index)
                 lst[index], lst[whereIsIndexMatchingNum] = lst[whereIsIndexMatchingNum], lst[index]
 
 
@@ -139,7 +143,7 @@ def get_data(epsilon, num, ndims, MAX_DIM):
         return numOfSwaps
 
     # get incidence between 2 simplices
-    def incidence(s_large, s_small):  
+    def incidence(s_large, s_small):
         # 0 if not incident
         for node in s_small:
             if node not in s_large:
@@ -235,10 +239,11 @@ def get_data(epsilon, num, ndims, MAX_DIM):
 
 data = []
 
-for e in range(NUM_STEPS):
+for e in tqdm.tqdm(range(NUM_STEPS)):
     data.append(get_data(e/NUM_STEPS, num, ndims, MAX_DIM))
-    print(data[e])
 
+for i in data:
+    print(i)
 
 # VISUALIZATION
 
@@ -255,17 +260,17 @@ def plot_data_3d(data):
             counts.append(data[i][j])
 
     fig = plt.figure()
- 
+
     # syntax for 3-D projection
     ax = plt.axes(projection ='3d')
-    
+
     # defining axes
     # z = np.linspace(0, 1, 100)
     # x = z * np.sin(25 * z)
     # y = z * np.cos(25 * z)
     # c = x + y
     ax.scatter(epsilons, dimensions, counts, c=dimensions)
-    
+
     # syntax for plotting
     ax.set_title('Barcode :)')
     ax.set_xlabel('Epsilon')
@@ -308,6 +313,8 @@ def plot_data_2d(data):
     plt.xlabel('Epsilon')
     plt.ylabel('Dimension')
 
-    plt.show()
+    # plt.show()
 
 plot_data_2d(data)
+stop = timeit.default_timer()
+print('execution time: ', stop - start)
