@@ -9,15 +9,14 @@ import networkx as nx
 from p5 import *
 start = timeit.default_timer()
 
-
 np.random.seed(23)
 class Barcode:
-    def __init__(self, random_graph=True, max_epsilon=0.4, num_datapoints=8, ndims=2, MAX_DIM=4, NUM_STEPS=10):
+    def __init__(self, random_graph=True, max_epsilon=0.4, num_datapoints=8, ndims=2, MAX_DIM=4, NUM_STEPS=10, drawing=False):
         self.adjacency = []
-        # self.raw = []
         self.betti_nums = []
         self.all_betti = []
         self.cloud = []
+        self.drawing = drawing
 
         self.draw_graph = random_graph
         self.max_epsilon = max_epsilon
@@ -270,140 +269,65 @@ class Barcode:
         ax.set_zlabel('Count')
         plt.show()
 
+    def show_drawing(self):
+        self.drawing = True
+
+    def generate_drawing(self, adj):
+        node_list = []
+        edge_list = []
+        for node in self.cloud: # uhhh
+            x, y = node
+            node_list.append([(x*700)+100, (y*700)+100])
+
+        for i in range(len(adj)):
+            for j in range(len(adj[0])):
+                if adj[i][j] != 0:
+                    edge = [node_list[i], node_list[j]]
+                    edge_list.append(edge)
+
+        stroke(255)
+        for i in edge_list:
+            line((i[0]), (i[1]))
+
+            fill("#666666ff")
+            no_stroke()
+            ellipse((i[0]), 15, 15)
+            ellipse((i[1]), 15, 15)
+            no_fill()
+            stroke(255)
+
+        stroke_weight(2)
+
+        for i in node_list:
+            stroke(255)
+            ellipse((i[0],i[1]), 30, 30)
+
+
+
 barcode = Barcode(max_epsilon=0.8)
-barcode.plot_data_3d()
+barcode.show_drawing()
+# barcode.plot_data_2d()
+# barcode.pretty_print()
 
 
 
 
 
+def setup():
+    size(800, 800)
 
+ii = 0
+def draw():
+    global ii
+    background("#212121ff")
 
-### CONSTANTS ###
-# epsilon = 0.4 # max epsilon
-# num = 8 # number of datapoints
-# ndims = 2 # dimension of data
+    no_fill()
+    no_stroke()
+    if ii < 1:
+        ii += 0.1
+    else:
+        ii = 0
+    barcode.generate_drawing(barcode.generate_adj(ii))
 
-# MAX_DIM = 4 # max dimension of simplices
-# # NUM_STEPS = 10 # number of different epsilon values between 0 and 1
-# NUM_STEPS = 10 # number of different epsilon values between 0 and 1
-
-# np.random.seed(1322)
-
-# data = []
-# raw_points = []
-# adjacency = []
-# for e in tqdm.tqdm(range(NUM_STEPS)):
-#     REP = 0.3
-#     temp = get_data(e/NUM_STEPS, num, ndims, MAX_DIM, generate_graph=False)
-#     # temp = get_data(REP, num, ndims, MAX_DIM, generate_graph=False)
-#     data.append(temp[0])
-#     raw_points.append(temp[1])
-#     if len(adjacency) == 0:
-#         adjacency = temp[2]
-#         print(temp[2], "what?", e)
-
-# for i,v in enumerate(data):
-#     print(data[i])
-
-# # VISUALIZATION
-
-# def plot_data_3d(data):
-
-#     epsilons = []
-#     dimensions = []
-#     counts = []
-
-#     for i in range(len(data)):
-#         for j in range(len(data[i])):
-#             epsilons.append(i/NUM_STEPS)
-#             dimensions.append(j)
-#             counts.append(data[i][j])
-
-#     fig = plt.figure()
-
-#     # syntax for 3-D projection
-#     ax = plt.axes(projection ='3d')
-
-#     ax.scatter(epsilons, dimensions, counts, c=dimensions)
-
-#     # syntax for plotting
-#     ax.set_title('Barcode :)')
-#     ax.set_xlabel('Epsilon')
-#     ax.set_ylabel('Dimension')
-#     ax.set_zlabel('Count')
-#     plt.show()
-
-# def plot_data_2d(data):
-
-#     epsilons_yes = []
-#     dimensions_yes = []
-
-#     epsilons_no = []
-#     dimensions_no = []
-
-#     for i in range(len(data)):
-#         for j in range(len(data[i])):
-#             if data[i][j] != 0:
-#                 epsilons_yes.append(i/NUM_STEPS)
-#                 dimensions_yes.append(j)
-#             else:
-#                 epsilons_no.append(i/NUM_STEPS)
-#                 dimensions_no.append(j)
-
-
-#     plt.scatter(epsilons_no, dimensions_no, c="white", s=100, marker='s')
-#     plt.scatter(epsilons_yes, dimensions_yes, c="blue", s=100, marker='s')
-
-#     plt.title('Barcode :)')
-#     plt.xlabel('Epsilon')
-#     plt.ylabel('Dimension')
-#     # plt.show()
-
-# plot_data_2d(data)
-# stop = timeit.default_timer()
-# print('execution time: ', stop - start)
-
-# def generate_drawing(raw, adjacency):
-#     node_list = []
-#     edge_list = []
-#     for node in raw[0]:
-#         x, y = node
-#         node_list.append([(x*700)+100, (y*700)+100])
-
-#     for i in range(len(adjacency)):
-#         for j in range(len(adjacency[0])):
-#             if adjacency[i][j] != 0:
-#                 edge = [node_list[i], node_list[j]]
-#                 edge_list.append(edge)
-
-#     stroke(255)
-#     for i in edge_list:
-#         line((i[0]), (i[1]))
-
-#         fill("#666666ff")
-#         no_stroke()
-#         ellipse((i[0]), 15, 15)
-#         ellipse((i[1]), 15, 15)
-#         no_fill()
-#         stroke(255)
-
-#     stroke_weight(2)
-
-#     for i in node_list:
-#         stroke(255)
-#         ellipse((i[0],i[1]), 30, 30)
-
-# def setup():
-#         size(800, 800)
-
-# def draw():
-#     background("#212121ff")
-#     no_fill()
-#     no_stroke()
-#     generate_drawing(raw_points, adjacency)
-
-# # if __name__ == '__main__':
-# # run()
-#     # pass
-
+if barcode.drawing:
+    run()
