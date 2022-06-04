@@ -7,19 +7,17 @@ import timeit
 import tqdm
 import networkx as nx
 from p5 import *
-
-
 start = timeit.default_timer()
 
 
 ### CONSTANTS ###
 epsilon = 0.4 # max epsilon
-num = 10 # number of datapoints
+num = 8 # number of datapoints
 ndims = 2 # dimension of data
 
 MAX_DIM = 4 # max dimension of simplices
 # NUM_STEPS = 10 # number of different epsilon values between 0 and 1
-NUM_STEPS = 1 # number of different epsilon values between 0 and 1
+NUM_STEPS = 10 # number of different epsilon values between 0 and 1
 
 np.random.seed(1322)
 
@@ -58,14 +56,7 @@ def get_data(epsilon, num, ndims, MAX_DIM, data=None, generate_graph=False):
             j += 1
         i += 1
 
-    # print("adjacency\n", adjacency)
-
-
-
-
     # GENERATING GRAPH
-
-    # g
 
     if generate_graph and epsilon==0.4:
         # get graph
@@ -216,16 +207,6 @@ def get_data(epsilon, num, ndims, MAX_DIM, data=None, generate_graph=False):
     for n in range(1, MAX_DIM):
         inc_mats.append(n_incidences(n))
 
-
-    # # PRINTING JUST FOR FUN
-
-    # for i in range(len(simplices)):
-    #     print(str(i) + " simplices: " + str(simplices[i]))
-
-    # for i in range(len(inc_mats)):
-    #     print(str(i) + " incidence matrix: " + str(inc_mats[i]))
-
-
     # ROW REDUCE
 
     row_reduced = []
@@ -244,37 +225,29 @@ def get_data(epsilon, num, ndims, MAX_DIM, data=None, generate_graph=False):
         nullities.append(nullity)
         ranks.append(rank)
 
-    # for i in range(len(row_reduced)):
-    #     print(str(i) + " row reduced: " + str(row_reduced[i]))
-    #     print(str(i) + " rank: " + str(ranks[i]))
-    #     print(str(i) + " nullity: " + str(nullities[i]))
-
     # CALCULATE BETTI NUMBERS
-
     betti_nums = []
 
     for i in range(MAX_DIM):
         betti_nums.append(nullities[i] - ranks[i+1])
 
-    # print(betti_nums)
-
     return [betti_nums, cloud, adjacency]
-
-# get_data(epsilon, num, ndims, MAX_DIM)
 
 data = []
 raw_points = []
-adjacency = None
+adjacency = []
 for e in tqdm.tqdm(range(NUM_STEPS)):
     REP = 0.3
-    # temp = get_data(e/NUM_STEPS, num, ndims, MAX_DIM, generate_graph=False)
-    temp = get_data(REP, num, ndims, MAX_DIM, generate_graph=False)
+    temp = get_data(e/NUM_STEPS, num, ndims, MAX_DIM, generate_graph=False)
+    # temp = get_data(REP, num, ndims, MAX_DIM, generate_graph=False)
     data.append(temp[0])
     raw_points.append(temp[1])
-    adjacency = temp[2]
+    if len(adjacency) == 0:
+        adjacency = temp[2]
+        print(temp[2], "what?", e)
 
-# for i,v in enumerate(data):
-#     print(raw_points[i], data[i])
+for i,v in enumerate(data):
+    print(data[i])
 
 # VISUALIZATION
 
@@ -295,11 +268,6 @@ def plot_data_3d(data):
     # syntax for 3-D projection
     ax = plt.axes(projection ='3d')
 
-    # defining axes
-    # z = np.linspace(0, 1, 100)
-    # x = z * np.sin(25 * z)
-    # y = z * np.cos(25 * z)
-    # c = x + y
     ax.scatter(epsilons, dimensions, counts, c=dimensions)
 
     # syntax for plotting
@@ -317,15 +285,6 @@ def plot_data_2d(data):
     epsilons_no = []
     dimensions_no = []
 
-    # for i in range(len(data)):
-    #     for j in range(len(data[i])):
-    #         epsilons.append(i/NUM_STEPS)
-    #         dimensions.append(j)
-    #         if data[i][j] == 0:
-    #             counts.append(0)
-    #         else:
-    #             counts.append(1)
-
     for i in range(len(data)):
         for j in range(len(data[i])):
             if data[i][j] != 0:
@@ -335,7 +294,6 @@ def plot_data_2d(data):
                 epsilons_no.append(i/NUM_STEPS)
                 dimensions_no.append(j)
 
-    # plt.grid()
 
     plt.scatter(epsilons_no, dimensions_no, c="white", s=100, marker='s')
     plt.scatter(epsilons_yes, dimensions_yes, c="blue", s=100, marker='s')
@@ -343,18 +301,15 @@ def plot_data_2d(data):
     plt.title('Barcode :)')
     plt.xlabel('Epsilon')
     plt.ylabel('Dimension')
-
     # plt.show()
 
 plot_data_2d(data)
 stop = timeit.default_timer()
-# print('execution time: ', stop - start)
-
+print('execution time: ', stop - start)
 
 def generate_drawing(raw, adjacency):
     node_list = []
     edge_list = []
-    # print(adjacency)
     for node in raw[0]:
         x, y = node
         node_list.append([(x*700)+100, (y*700)+100])
@@ -364,7 +319,6 @@ def generate_drawing(raw, adjacency):
             if adjacency[i][j] != 0:
                 edge = [node_list[i], node_list[j]]
                 edge_list.append(edge)
-    # print(edge_list)
 
     stroke(255)
     for i in edge_list:
@@ -383,12 +337,6 @@ def generate_drawing(raw, adjacency):
         stroke(255)
         ellipse((i[0],i[1]), 30, 30)
 
-        # fill("#666666ff")
-        # no_stroke()
-        # ellipse((i[0],i[1]), 15, 15)
-        # no_fill()
-
-
 def setup():
         size(800, 800)
 
@@ -396,10 +344,8 @@ def draw():
     background("#212121ff")
     no_fill()
     no_stroke()
-    # ellipse((10,10),20,20)
     generate_drawing(raw_points, adjacency)
 
 if __name__ == '__main__':
     run()
     pass
-
