@@ -13,8 +13,8 @@ start = timeit.default_timer()
 
 
 ### CONSTANTS ###
-epsilon = 0.01 # max epsilon
-num = 10 # number of datapoints
+epsilon = 0.4 # max epsilon
+num = 8 # number of datapoints
 ndims = 2 # dimension of data
 
 MAX_DIM = 4 # max dimension of simplices
@@ -266,7 +266,8 @@ data = []
 raw_points = []
 adjacency = None
 for e in tqdm.tqdm(range(NUM_STEPS)):
-    REP = 0.2
+    REP = 0.3
+    # temp = get_data(e/NUM_STEPS, num, ndims, MAX_DIM, generate_graph=False)
     temp = get_data(REP, num, ndims, MAX_DIM, generate_graph=False)
     data.append(temp[0])
     raw_points.append(temp[1])
@@ -364,14 +365,18 @@ def generate_drawing(raw, adjacency):
                 edge = [node_list[i], node_list[j]]
                 edge_list.append(edge)
 
-    for i in node_list:
-        ellipse((i[0],i[1]), 30, 30)
-        fill("red")
-        ellipse((i[0],i[1]), 10, 10)
-        no_fill()
-
+    stroke(255)
     for i in edge_list:
         line((i[0]),(i[1]))
+
+    for i in node_list:
+        stroke(255)
+        ellipse((i[0],i[1]), 30, 30)
+        fill("#666666ff")
+        no_stroke()
+        ellipse((i[0],i[1]), 15, 15)
+        no_fill()
+
 
 def setup():
         size(800, 800)
@@ -379,7 +384,7 @@ def setup():
 def draw():
     background("#212121ff")
     no_fill()
-    stroke(255)
+    no_stroke()
     # ellipse((10,10),20,20)
     generate_drawing(raw_points, adjacency)
 
