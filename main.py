@@ -346,6 +346,6 @@ def draw():
     no_stroke()
     generate_drawing(raw_points, adjacency)
 
-if __name__ == '__main__':
-    run()
-    pass
+# if __name__ == '__main__':
+# run()
+    # pass
