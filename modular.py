@@ -16,19 +16,59 @@ class Barcode:
         self.betti_nums = []
         self.all_betti = []
         self.cloud = []
-        self.drawing = drawing
 
-        self.draw_graph = random_graph
+        self.drawing = drawing
+        self.generating_manual = False
+        self.mouse_was_pressed = False
+        self.generating_points = []
+
+        self.random_graph = random_graph
         self.max_epsilon = max_epsilon
         self.num_datapoints = num_datapoints
         self.ndims = ndims
         self.MAX_DIM = MAX_DIM
         self.NUM_STEPS = NUM_STEPS
 
-        self.generate_cloud()
+        if self.random_graph:
+            self.generate_random_cloud()
+        else:
+            self.generate_manual_cloud()
+
+
+    def generate_manual_cloud(self):
+        self.generating_manual = True
+
+        if mouse_is_pressed and not self.mouse_was_pressed:
+            # print("click!", mouse_x, mouse_y)
+            self.cloud.append([((mouse_x-100) / 700), ((mouse_y-100) / 700)])
+            self.generating_points.append([mouse_x, mouse_y])
+
+        for i in self.generating_points:
+            fill("#aac4f2")
+            ellipse((i[0], i[1]), 20, 20)
+            # print(i)
+        # print(self.generating_points)
+
+        if mouse_is_pressed:
+            self.mouse_was_pressed = True
+        else:
+            self.mouse_was_pressed = False
+
+        if len(self.cloud) == self.num_datapoints:
+            self.generating_manual = False
+            self.drawing = False
+            self.run_gen()
+
+
+    def run_gen(self):
         for e in tqdm.tqdm(range(self.NUM_STEPS)):
             self.generate_adj(e/self.NUM_STEPS)
             self.betti_nums.append(self.get_data())
+
+        if self.random_graph == False:
+            self.show_drawing()
+            self.pretty_print()
+            self.plot_data_3d()
 
     def pretty_print(self):
         for i in self.betti_nums:
@@ -40,9 +80,10 @@ class Barcode:
             sum += (value - p2[count])**2.0
         return math.sqrt(sum)
 
-    def generate_cloud(self):
+    def generate_random_cloud(self):
         # get actual data as np array
         self.cloud = np.random.random((self.num_datapoints, self.ndims)) # each point p = [p1, p2, ..., p_ndims]
+        self.run_gen()
         return self.cloud
 
     def generate_adj(self, e):
@@ -304,10 +345,10 @@ class Barcode:
 
 
 
-barcode = Barcode(max_epsilon=0.8)
-barcode.show_drawing()
+barcode = Barcode(max_epsilon=0.8, random_graph=False)
+# barcode.show_drawing()
 # barcode.plot_data_2d()
-# barcode.pretty_print()
+barcode.pretty_print()
 
 
 
@@ -321,13 +362,20 @@ def draw():
     global ii
     background("#212121ff")
 
-    no_fill()
-    no_stroke()
-    if ii < 1:
-        ii += 0.1
-    else:
-        ii = 0
-    barcode.generate_drawing(barcode.generate_adj(ii))
+    if barcode.drawing:
+        no_fill()
+        no_stroke()
+        if ii < math.sqrt(2):
+            ii += 0.1
+        else:
+            ii = 0
+        barcode.generate_drawing(barcode.generate_adj(ii))
 
-if barcode.drawing:
+    if barcode.generating_manual:
+        barcode.generate_manual_cloud()
+        # for i in barcode.generating_points:
+        # ellipse(i[0], i[1],
+
+
+if barcode.drawing or barcode.generating_manual:
     run()
