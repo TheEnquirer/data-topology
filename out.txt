@@ -1,0 +1,1207 @@
+Defaulting to user installation because normal site-packages is not writeable
+Collecting PyOpenGL-accelerate
+  Using cached PyOpenGL-accelerate-3.1.5.tar.gz (538 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Building wheels for collected packages: PyOpenGL-accelerate
+  Building wheel for PyOpenGL-accelerate (setup.py): started
+  Building wheel for PyOpenGL-accelerate (setup.py): finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × python setup.py bdist_wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [584 lines of output]
+      running bdist_wheel
+      running build
+      running build_py
+      creating build
+      creating build/lib.linux-x86_64-cpython-310
+      creating build/lib.linux-x86_64-cpython-310/OpenGL_accelerate
+      copying OpenGL_accelerate/__init__.py -> build/lib.linux-x86_64-cpython-310/OpenGL_accelerate
+      running build_ext
+      building 'OpenGL_accelerate.wrapper' extension
+      creating build/temp.linux-x86_64-cpython-310
+      creating build/temp.linux-x86_64-cpython-310/src
+      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -ffat-lto-objects -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -fPIC -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/.. -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/src -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7 -I/usr/include/python3.10 -c src/wrapper.c -o build/temp.linux-x86_64-cpython-310/src/wrapper.o
+      src/wrapper.c: In function ‘__Pyx_ParseOptionalKeywords’:
+      src/wrapper.c:25804:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25804 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25804:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      25804 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25804:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25804 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25804:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25804 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25804:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      25804 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25804:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25804 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25820:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25820 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25820:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      25820 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25820:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25820 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25820:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25820 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25820:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      25820 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25820:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25820 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      gcc -pthread -shared -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto build/temp.linux-x86_64-cpython-310/src/wrapper.o -L/usr/lib -o build/lib.linux-x86_64-cpython-310/OpenGL_accelerate/wrapper.cpython-310-x86_64-linux-gnu.so
+      building 'OpenGL_accelerate.formathandler' extension
+      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -ffat-lto-objects -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -fPIC -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/.. -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/src -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7 -I/usr/include/python3.10 -c src/formathandler.c -o build/temp.linux-x86_64-cpython-310/src/formathandler.o
+      src/formathandler.c: In function ‘__Pyx_ParseOptionalKeywords’:
+      src/formathandler.c:4658:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4658 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4658:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4658 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4658:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4658 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4658:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4658 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4658:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4658 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4658:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4658 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4674:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4674 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4674:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4674 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4674:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4674 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4674:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4674 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4674:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4674 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4674:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4674 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      gcc -pthread -shared -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto build/temp.linux-x86_64-cpython-310/src/formathandler.o -L/usr/lib -o build/lib.linux-x86_64-cpython-310/OpenGL_accelerate/formathandler.cpython-310-x86_64-linux-gnu.so
+      building 'OpenGL_accelerate.arraydatatype' extension
+      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -ffat-lto-objects -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -fPIC -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/.. -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/src -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7 -I/usr/include/python3.10 -c src/arraydatatype.c -o build/temp.linux-x86_64-cpython-310/src/arraydatatype.o
+      src/arraydatatype.c: In function ‘__Pyx_ParseOptionalKeywords’:
+      src/arraydatatype.c:20908:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20908 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20908:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      20908 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20908:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20908 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20908:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20908 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20908:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      20908 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20908:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20908 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20924:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20924 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20924:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      20924 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20924:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20924 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20924:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20924 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20924:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      20924 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20924:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20924 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      gcc -pthread -shared -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto build/temp.linux-x86_64-cpython-310/src/arraydatatype.o -L/usr/lib -o build/lib.linux-x86_64-cpython-310/OpenGL_accelerate/arraydatatype.cpython-310-x86_64-linux-gnu.so
+      building 'OpenGL_accelerate.errorchecker' extension
+      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -ffat-lto-objects -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -fPIC -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/.. -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/src -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7 -I/usr/include/python3.10 -c src/errorchecker.c -o build/temp.linux-x86_64-cpython-310/src/errorchecker.o
+      src/errorchecker.c: In function ‘__Pyx_ParseOptionalKeywords’:
+      src/errorchecker.c:4345:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4345 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4345:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4345 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4345:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4345 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4345:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4345 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4345:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4345 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4345:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4345 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4361:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4361 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4361:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4361 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4361:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4361 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4361:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4361 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4361:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4361 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4361:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4361 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      gcc -pthread -shared -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto build/temp.linux-x86_64-cpython-310/src/errorchecker.o -L/usr/lib -o build/lib.linux-x86_64-cpython-310/OpenGL_accelerate/errorchecker.cpython-310-x86_64-linux-gnu.so
+      building 'OpenGL_accelerate.vbo' extension
+      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -ffat-lto-objects -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -fPIC -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/.. -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/src -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7 -I/usr/include/python3.10 -c src/vbo.c -o build/temp.linux-x86_64-cpython-310/src/vbo.o
+      src/vbo.c: In function ‘__pyx_tp_dealloc_17OpenGL_accelerate_3vbo_VBO’:
+      src/vbo.c:11131:5: error: lvalue required as increment operand
+      11131 |     ++Py_REFCNT(o);
+            |     ^~
+      src/vbo.c:11133:5: error: lvalue required as decrement operand
+      11133 |     --Py_REFCNT(o);
+            |     ^~
+      src/vbo.c: In function ‘__pyx_tp_dealloc_17OpenGL_accelerate_3vbo_VBOOffset’:
+      src/vbo.c:11619:5: error: lvalue required as increment operand
+      11619 |     ++Py_REFCNT(o);
+            |     ^~
+      src/vbo.c:11621:5: error: lvalue required as decrement operand
+      11621 |     --Py_REFCNT(o);
+            |     ^~
+      src/vbo.c: In function ‘__Pyx_ParseOptionalKeywords’:
+      src/vbo.c:13016:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13016 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13016:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      13016 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13016:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13016 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13016:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13016 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13016:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      13016 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13016:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13016 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13032:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13032 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13032:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      13032 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13032:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13032 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13032:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13032 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13032:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      13032 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13032:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13032 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      error: command '/usr/bin/gcc' failed with exit code 1
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for PyOpenGL-accelerate
+  Running setup.py clean for PyOpenGL-accelerate
+Failed to build PyOpenGL-accelerate
+Installing collected packages: PyOpenGL-accelerate
+  Running setup.py install for PyOpenGL-accelerate: started
+  Running setup.py install for PyOpenGL-accelerate: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Running setup.py install for PyOpenGL-accelerate did not run successfully.
+  │ exit code: 1
+  ╰─> [586 lines of output]
+      running install
+      /home/enquirer/.local/lib/python3.10/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+        warnings.warn(
+      running build
+      running build_py
+      creating build
+      creating build/lib.linux-x86_64-cpython-310
+      creating build/lib.linux-x86_64-cpython-310/OpenGL_accelerate
+      copying OpenGL_accelerate/__init__.py -> build/lib.linux-x86_64-cpython-310/OpenGL_accelerate
+      running build_ext
+      building 'OpenGL_accelerate.wrapper' extension
+      creating build/temp.linux-x86_64-cpython-310
+      creating build/temp.linux-x86_64-cpython-310/src
+      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -ffat-lto-objects -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -fPIC -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/.. -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/src -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7 -I/usr/include/python3.10 -c src/wrapper.c -o build/temp.linux-x86_64-cpython-310/src/wrapper.o
+      src/wrapper.c: In function ‘__Pyx_ParseOptionalKeywords’:
+      src/wrapper.c:25804:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25804 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25804:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      25804 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25804:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25804 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25804:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25804 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25804:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      25804 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25804:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25804 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25820:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25820 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25820:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      25820 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25820:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25820 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25820:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25820 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25820:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      25820 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/wrapper.c:25820:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      25820 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/wrapper.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      gcc -pthread -shared -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto build/temp.linux-x86_64-cpython-310/src/wrapper.o -L/usr/lib -o build/lib.linux-x86_64-cpython-310/OpenGL_accelerate/wrapper.cpython-310-x86_64-linux-gnu.so
+      building 'OpenGL_accelerate.formathandler' extension
+      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -ffat-lto-objects -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -fPIC -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/.. -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/src -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7 -I/usr/include/python3.10 -c src/formathandler.c -o build/temp.linux-x86_64-cpython-310/src/formathandler.o
+      src/formathandler.c: In function ‘__Pyx_ParseOptionalKeywords’:
+      src/formathandler.c:4658:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4658 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4658:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4658 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4658:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4658 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4658:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4658 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4658:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4658 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4658:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4658 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4674:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4674 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4674:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4674 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4674:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4674 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4674:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4674 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4674:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4674 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/formathandler.c:4674:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4674 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/formathandler.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      gcc -pthread -shared -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto build/temp.linux-x86_64-cpython-310/src/formathandler.o -L/usr/lib -o build/lib.linux-x86_64-cpython-310/OpenGL_accelerate/formathandler.cpython-310-x86_64-linux-gnu.so
+      building 'OpenGL_accelerate.arraydatatype' extension
+      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -ffat-lto-objects -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -fPIC -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/.. -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/src -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7 -I/usr/include/python3.10 -c src/arraydatatype.c -o build/temp.linux-x86_64-cpython-310/src/arraydatatype.o
+      src/arraydatatype.c: In function ‘__Pyx_ParseOptionalKeywords’:
+      src/arraydatatype.c:20908:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20908 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20908:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      20908 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20908:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20908 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20908:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20908 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20908:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      20908 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20908:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20908 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20924:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20924 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20924:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      20924 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20924:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20924 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20924:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20924 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20924:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      20924 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/arraydatatype.c:20924:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      20924 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/arraydatatype.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      gcc -pthread -shared -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto build/temp.linux-x86_64-cpython-310/src/arraydatatype.o -L/usr/lib -o build/lib.linux-x86_64-cpython-310/OpenGL_accelerate/arraydatatype.cpython-310-x86_64-linux-gnu.so
+      building 'OpenGL_accelerate.errorchecker' extension
+      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -ffat-lto-objects -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -fPIC -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/.. -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/src -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7 -I/usr/include/python3.10 -c src/errorchecker.c -o build/temp.linux-x86_64-cpython-310/src/errorchecker.o
+      src/errorchecker.c: In function ‘__Pyx_ParseOptionalKeywords’:
+      src/errorchecker.c:4345:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4345 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4345:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4345 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4345:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4345 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4345:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4345 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4345:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4345 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4345:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4345 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4361:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4361 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4361:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4361 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4361:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4361 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4361:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4361 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4361:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+       4361 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/errorchecker.c:4361:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+       4361 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/errorchecker.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      gcc -pthread -shared -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto build/temp.linux-x86_64-cpython-310/src/errorchecker.o -L/usr/lib -o build/lib.linux-x86_64-cpython-310/OpenGL_accelerate/errorchecker.cpython-310-x86_64-linux-gnu.so
+      building 'OpenGL_accelerate.vbo' extension
+      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -ffat-lto-objects -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -march=x86-64 -mtune=generic -O3 -pipe -fno-plt -fexceptions -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -flto -fPIC -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/.. -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7/src -I/tmp/pip-install-eergpj1f/pyopengl-accelerate_f1518d655dce4ed2a4a98730777974b7 -I/usr/include/python3.10 -c src/vbo.c -o build/temp.linux-x86_64-cpython-310/src/vbo.o
+      src/vbo.c: In function ‘__pyx_tp_dealloc_17OpenGL_accelerate_3vbo_VBO’:
+      src/vbo.c:11131:5: error: lvalue required as increment operand
+      11131 |     ++Py_REFCNT(o);
+            |     ^~
+      src/vbo.c:11133:5: error: lvalue required as decrement operand
+      11133 |     --Py_REFCNT(o);
+            |     ^~
+      src/vbo.c: In function ‘__pyx_tp_dealloc_17OpenGL_accelerate_3vbo_VBOOffset’:
+      src/vbo.c:11619:5: error: lvalue required as increment operand
+      11619 |     ++Py_REFCNT(o);
+            |     ^~
+      src/vbo.c:11621:5: error: lvalue required as decrement operand
+      11621 |     --Py_REFCNT(o);
+            |     ^~
+      src/vbo.c: In function ‘__Pyx_ParseOptionalKeywords’:
+      src/vbo.c:13016:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13016 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13016:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      13016 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13016:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13016 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13016:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13016 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13016:21: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      13016 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13016:21: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13016 |                     (PyUnicode_GET_SIZE(**name) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                     ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13032:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13032 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13032:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      13032 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13032:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13032 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13032:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13032 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13032:25: warning: ‘PyUnicode_AsUnicode’ is deprecated [-Wdeprecated-declarations]
+      13032 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:580:45: note: declared here
+        580 | Py_DEPRECATED(3.3) PyAPI_FUNC(Py_UNICODE *) PyUnicode_AsUnicode(
+            |                                             ^~~~~~~~~~~~~~~~~~~
+      src/vbo.c:13032:25: warning: ‘_PyUnicode_get_wstr_length’ is deprecated [-Wdeprecated-declarations]
+      13032 |                         (PyUnicode_GET_SIZE(**argname) != PyUnicode_GET_SIZE(key)) ? 1 :
+            |                         ^
+      In file included from /usr/include/python3.10/unicodeobject.h:1046,
+                       from /usr/include/python3.10/Python.h:83,
+                       from src/vbo.c:4:
+      /usr/include/python3.10/cpython/unicodeobject.h:446:26: note: declared here
+        446 | static inline Py_ssize_t _PyUnicode_get_wstr_length(PyObject *op) {
+            |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      error: command '/usr/bin/gcc' failed with exit code 1
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: legacy-install-failure
+
+× Encountered error while trying to install package.
+╰─> PyOpenGL-accelerate
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for output from the failure.

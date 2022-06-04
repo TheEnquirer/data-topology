@@ -14,14 +14,14 @@ start = timeit.default_timer()
 
 ### CONSTANTS ###
 epsilon = 0.4 # max epsilon
-num = 8 # number of datapoints
+num = 10 # number of datapoints
 ndims = 2 # dimension of data
 
 MAX_DIM = 4 # max dimension of simplices
 # NUM_STEPS = 10 # number of different epsilon values between 0 and 1
 NUM_STEPS = 1 # number of different epsilon values between 0 and 1
 
-# np.random.seed(3)
+np.random.seed(1322)
 
 def get_data(epsilon, num, ndims, MAX_DIM, data=None, generate_graph=False):
 
@@ -354,7 +354,7 @@ stop = timeit.default_timer()
 def generate_drawing(raw, adjacency):
     node_list = []
     edge_list = []
-    print(adjacency)
+    # print(adjacency)
     for node in raw[0]:
         x, y = node
         node_list.append([(x*700)+100, (y*700)+100])
@@ -364,18 +364,29 @@ def generate_drawing(raw, adjacency):
             if adjacency[i][j] != 0:
                 edge = [node_list[i], node_list[j]]
                 edge_list.append(edge)
+    # print(edge_list)
 
     stroke(255)
     for i in edge_list:
-        line((i[0]),(i[1]))
+        line((i[0]), (i[1]))
+
+        fill("#666666ff")
+        no_stroke()
+        ellipse((i[0]), 15, 15)
+        ellipse((i[1]), 15, 15)
+        no_fill()
+        stroke(255)
+
+    stroke_weight(2)
 
     for i in node_list:
         stroke(255)
         ellipse((i[0],i[1]), 30, 30)
-        fill("#666666ff")
-        no_stroke()
-        ellipse((i[0],i[1]), 15, 15)
-        no_fill()
+
+        # fill("#666666ff")
+        # no_stroke()
+        # ellipse((i[0],i[1]), 15, 15)
+        # no_fill()
 
 
 def setup():
