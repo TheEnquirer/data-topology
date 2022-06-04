@@ -10,15 +10,16 @@ from p5 import *
 start = timeit.default_timer()
 
 
+np.random.seed(23)
 class Barcode:
-    def __init__(self, draw_graph=False, max_epsilon=0.4, num_datapoints=8, ndims=2, MAX_DIM=4, NUM_STEPS=10):
+    def __init__(self, random_graph=True, max_epsilon=0.4, num_datapoints=8, ndims=2, MAX_DIM=4, NUM_STEPS=10):
         self.adjacency = []
         # self.raw = []
         self.betti_nums = []
         self.all_betti = []
         self.cloud = []
 
-        self.draw_graph = draw_graph
+        self.draw_graph = random_graph
         self.max_epsilon = max_epsilon
         self.num_datapoints = num_datapoints
         self.ndims = ndims
@@ -223,10 +224,54 @@ class Barcode:
         #         }
         return local_betti
         # return [self.betti_nums, self.cloud, self.adjacency]
+    def plot_data_2d(self):
+        epsilons_yes = []
+        dimensions_yes = []
 
+        epsilons_no = []
+        dimensions_no = []
 
-barcode = Barcode()
-barcode.pretty_print()
+        for i in range(len(self.betti_nums)):
+            for j in range(len(self.betti_nums[i])):
+                if self.betti_nums[i][j] != 0:
+                    epsilons_yes.append(i/self.NUM_STEPS)
+                    dimensions_yes.append(j)
+                else:
+                    epsilons_no.append(i/self.NUM_STEPS)
+                    dimensions_no.append(j)
+
+        plt.scatter(epsilons_no, dimensions_no, c="white", s=100, marker='s')
+        plt.scatter(epsilons_yes, dimensions_yes, c="blue", s=100, marker='s')
+
+        plt.title('Barcode')
+        plt.xlabel('Epsilon')
+        plt.ylabel('Dimension')
+        plt.show()
+
+    def plot_data_3d(self):
+
+        epsilons = []
+        dimensions = []
+        counts = []
+
+        for i in range(len(self.betti_nums)):
+            for j in range(len(self.betti_nums[i])):
+                epsilons.append(i/self.NUM_STEPS)
+                dimensions.append(j)
+                counts.append(self.betti_nums[i][j])
+        # syntax for 3-D projection
+        ax = plt.axes(projection ='3d')
+
+        ax.scatter(epsilons, dimensions, counts, c=dimensions)
+        # syntax for plotting
+        ax.set_title('Barcode')
+        ax.set_xlabel('Epsilon')
+        ax.set_ylabel('Dimension')
+        ax.set_zlabel('Count')
+        plt.show()
+
+barcode = Barcode(max_epsilon=0.8)
+barcode.plot_data_3d()
 
 
 
