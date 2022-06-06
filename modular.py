@@ -7,9 +7,9 @@ import timeit
 import tqdm
 import networkx as nx
 from p5 import *
-start = timeit.default_timer()
+# start = timeit.default_timer()
 
-np.random.seed(23)
+np.random.seed(7)
 class Barcode:
     def __init__(self, random_graph=True, max_epsilon=0.4, num_datapoints=8, ndims=2, MAX_DIM=4, NUM_STEPS=10, drawing=False):
         self.adjacency = []
@@ -59,7 +59,6 @@ class Barcode:
             self.drawing = False
             self.run_gen()
 
-
     def run_gen(self):
         for e in tqdm.tqdm(range(self.NUM_STEPS)):
             self.generate_adj(e/self.NUM_STEPS)
@@ -68,11 +67,12 @@ class Barcode:
         if self.random_graph == False:
             self.show_drawing()
             self.pretty_print()
-            self.plot_data_3d()
+            # self.plot_data_3d()
 
     def pretty_print(self):
         for i in self.betti_nums:
             print(i)
+        print(self.cloud)
 
     def distance(self, p1, p2):
         sum = 0.0
@@ -357,10 +357,11 @@ class Barcode:
 
 
 start = timeit.default_timer()
-barcode = Barcode(MAX_DIM=5, num_datapoints=9)
-# barcode.show_drawing()
+barcode = Barcode(MAX_DIM=5, num_datapoints=12)
+barcode.show_drawing()
 # barcode.plot_data_2d()
 barcode.pretty_print()
+
 stop = timeit.default_timer()
 print('execution time: ', stop - start)
 

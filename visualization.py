@@ -14,16 +14,16 @@ from matplotlib import style
 start = timeit.default_timer()
 
 
-data = [[8, 3, 0, 0, 0],
-        [7, 2, 0, 0, 0],
-        [5, 1, 0, 0, 0],
-        [2, 0, 0, 0, 0],
-        [1, 0, 3, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0]]
+data = [[11, 0, 0, 0, 0],
+[9, 0, 0, 0, 0],
+[7, 0, 0, 0, 0],
+[3, 1, 0, 0, 0],
+[2, 0, 0, 0, 0],
+[0, 0, 0, 0, 0],
+[0, 1, 0, 0, 0],
+[0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0]]
 
 
 def plot_data_2d(data):
@@ -44,8 +44,8 @@ def plot_data_2d(data):
                 epsilons_no.append(i/num_steps)
                 dimensions_no.append(j)
 
-    plt.scatter(epsilons_no, dimensions_no, c="white", s=12300/num_steps, marker='s')
-    plt.scatter(epsilons_yes, dimensions_yes, c="k", s=12300/num_steps, marker='s')
+    plt.scatter(epsilons_no, dimensions_no, c="white", s=12000/num_steps, marker='s')
+    plt.scatter(epsilons_yes, dimensions_yes, c="k", s=12000/num_steps, marker='s')
 
     plt.yticks(np.arange(0, len(data[0]), step=1))
     plt.xticks(np.arange(0, 1.1, step=1/num_steps))
