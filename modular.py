@@ -146,10 +146,21 @@ class Barcode:
             for node in good_nodes:
                 for simplex in simplices[n-1]:
                     if node not in simplex:
-                        g = [node, *simplex]
-                        g.sort()
-                        if is_complete(g) and g not in n_simplices:
-                            n_simplices.append(g)
+                        # g = [node, *simplex]
+                        # g.sort()
+                        # if g not in n_simplices:
+                        #     if is_complete(g):
+                        #         n_simplices.append(g)
+                        complete = True
+                        for i in range(len(simplex)):
+                            if adj_mat[node][simplex[i]] == 0:
+                                complete = False
+                                break
+                        if complete:
+                            g = [node, *simplex]
+                            g.sort()
+                            if g not in n_simplices:
+                                n_simplices.append(g)
             return n_simplices
 
         # generate all simplices
@@ -345,10 +356,13 @@ class Barcode:
 
 
 
-barcode = Barcode(max_epsilon=0.8, random_graph=False)
+start = timeit.default_timer()
+barcode = Barcode(MAX_DIM=5, num_datapoints=9)
 # barcode.show_drawing()
 # barcode.plot_data_2d()
 barcode.pretty_print()
+stop = timeit.default_timer()
+print('execution time: ', stop - start)
 
 
 
