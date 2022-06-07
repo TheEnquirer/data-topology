@@ -4,7 +4,6 @@ from sympy import *
 from matplotlib import colors, pyplot as plt
 from mpl_toolkits import mplot3d
 import timeit
-import tqdm
 import networkx as nx
 from p5 import *
 from matplotlib import style
