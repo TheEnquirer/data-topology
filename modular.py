@@ -58,6 +58,7 @@ class Barcode:
             self.generating_manual = False
             self.drawing = False
             self.run_gen()
+            self.plot_data_3d()
 
     def run_gen(self):
         for e in tqdm.tqdm(range(self.NUM_STEPS)):
@@ -276,50 +277,112 @@ class Barcode:
         return local_betti
         # return [self.betti_nums, self.cloud, self.adjacency]
     def plot_data_2d(self):
+        # epsilons_yes = []
+        # dimensions_yes = []
+
+        # epsilons_no = []
+        # dimensions_no = []
+
+        # for i in range(len(self.betti_nums)):
+        #     for j in range(len(self.betti_nums[i])):
+        #         if self.betti_nums[i][j] != 0:
+        #             epsilons_yes.append(i/self.NUM_STEPS)
+        #             dimensions_yes.append(j)
+        #         else:
+        #             epsilons_no.append(i/self.NUM_STEPS)
+        #             dimensions_no.append(j)
+
+        # plt.scatter(epsilons_no, dimensions_no, c="white", s=100, marker='s')
+        # plt.scatter(epsilons_yes, dimensions_yes, c="blue", s=100, marker='s')
+
+        # plt.title('Barcode')
+        # plt.xlabel('Epsilon')
+        # plt.ylabel('Dimension')
+        # plt.show()
         epsilons_yes = []
         dimensions_yes = []
 
         epsilons_no = []
         dimensions_no = []
 
+        num_steps = len(self.betti_nums)
+
         for i in range(len(self.betti_nums)):
             for j in range(len(self.betti_nums[i])):
                 if self.betti_nums[i][j] != 0:
-                    epsilons_yes.append(i/self.NUM_STEPS)
+                    epsilons_yes.append(i/num_steps)
                     dimensions_yes.append(j)
                 else:
-                    epsilons_no.append(i/self.NUM_STEPS)
+                    epsilons_no.append(i/num_steps)
                     dimensions_no.append(j)
 
-        plt.scatter(epsilons_no, dimensions_no, c="white", s=100, marker='s')
-        plt.scatter(epsilons_yes, dimensions_yes, c="blue", s=100, marker='s')
+        plt.scatter(epsilons_no, dimensions_no, c="white", s=12000/num_steps, marker='s')
+        plt.scatter(epsilons_yes, dimensions_yes, c="k", s=12000/num_steps, marker='s')
+
+        plt.yticks(np.arange(0, len(self.betti_nums[0]), step=1))
+        plt.xticks(np.arange(0, 1.1, step=1/num_steps))
 
         plt.title('Barcode')
         plt.xlabel('Epsilon')
         plt.ylabel('Dimension')
         plt.show()
 
+
     def plot_data_3d(self):
 
+        # epsilons = []
+        # dimensions = []
+        # counts = []
+
+        # for i in range(len(self.betti_nums)):
+        #     for j in range(len(self.betti_nums[i])):
+        #         epsilons.append(i/self.NUM_STEPS)
+        #         dimensions.append(j)
+        #         counts.append(self.betti_nums[i][j])
+        # # syntax for 3-D projection
+        # ax = plt.axes(projection ='3d')
+
+        # ax.scatter(epsilons, dimensions, counts, c=dimensions)
+        # # syntax for plotting
+        # ax.set_title('Barcode')
+        # ax.set_xlabel('Epsilon')
+        # ax.set_ylabel('Dimension')
+        # ax.set_zlabel('Count')
+        # plt.show()
         epsilons = []
         dimensions = []
         counts = []
 
+        colors = ['tomato','orange','gold','yellowgreen','turquoise','deepskyblue','royalblue']
+        color = []
+        col1 = True
+
+        num_steps = len(self.betti_nums)
+
         for i in range(len(self.betti_nums)):
+            # col1 = True
             for j in range(len(self.betti_nums[i])):
-                epsilons.append(i/self.NUM_STEPS)
+                epsilons.append(i/num_steps)
                 dimensions.append(j)
                 counts.append(self.betti_nums[i][j])
+                # if col1:
+                #     color.append('tab:blue')
+                # else:
+                #     color.append('deepskyblue')
+                # col1 = not col1
+                color.append(colors[j])
         # syntax for 3-D projection
         ax = plt.axes(projection ='3d')
 
-        ax.scatter(epsilons, dimensions, counts, c=dimensions)
-        # syntax for plotting
+        # ax.scatter(epsilons, dimensions, counts, c=dimensions)
+        ax.bar3d(epsilons, dimensions, 0, 1/num_steps, 1, counts, shade=True, color=color)
+
         ax.set_title('Barcode')
         ax.set_xlabel('Epsilon')
         ax.set_ylabel('Dimension')
         ax.set_zlabel('Count')
         plt.show()
+
 
     def show_drawing(self):
         self.drawing = True
@@ -357,10 +420,11 @@ class Barcode:
 
 
 start = timeit.default_timer()
-barcode = Barcode(MAX_DIM=5, num_datapoints=12)
+# barcode = Barcode(MAX_DIM=5, num_datapoints=12)
+barcode = Barcode(num_datapoints=8, random_graph=True)
 barcode.show_drawing()
-# barcode.plot_data_2d()
-barcode.pretty_print()
+barcode.plot_data_2d()
+# barcode.pretty_print()
 
 stop = timeit.default_timer()
 print('execution time: ', stop - start)
