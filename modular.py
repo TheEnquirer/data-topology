@@ -420,11 +420,7 @@ class Barcode:
 
 
 start = timeit.default_timer()
-# barcode = Barcode(MAX_DIM=5, num_datapoints=12)
-barcode = Barcode(num_datapoints=8, random_graph=True)
-barcode.show_drawing()
-barcode.plot_data_2d()
-# barcode.pretty_print()
+barcode = Barcode(num_datapoints=8, random_graph=False)
 
 stop = timeit.default_timer()
 print('execution time: ', stop - start)
